@@ -18,6 +18,7 @@ module.exports = {
 
   'store' : function(req, res){
     var data = req.body;
+    console.log(data);
     ListModule.store(data).then(function(result) {
       console.log(result);
       res.send(result);

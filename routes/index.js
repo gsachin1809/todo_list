@@ -3,10 +3,10 @@ var router = express.Router();
 
 var ListController = require(__dirname+'/../app/https/controllers/ListController.js');
 
-router.get('/admin/list',ListController.index)
-router.post('/admin/list',ListController.store)
-router.get('/admin/list/:id',ListController.show)
-router.put('/admin/list/:id',ListController.destroy)
+router.get('/api/v1/list',ListController.index)
+router.post('/api/v1/list',ListController.store)
+router.get('/api/v1/list/:id',ListController.show)
+router.put('/api/v1/list/:id',ListController.destroy)
 
 
 /* GET home page. */
