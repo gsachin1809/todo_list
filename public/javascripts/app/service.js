@@ -3,10 +3,11 @@ app.factory('List',function($resource){
   var factory   =   {}
 
   factory.resource    =   function(){
-    var url   =   '/api/v1/list';
+    var url   =   '/api/v1/list/:id';
     return  $resource(url, {},{
         'store': { method:'POST',params:{}},
         'index': { method:'GET',params:{}},
+        'destroy': { method:'PUT',params:{}},
     });
   }
 

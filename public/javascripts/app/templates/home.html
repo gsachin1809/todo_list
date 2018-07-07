@@ -3,21 +3,28 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="list in lists">
-				<div class="{{ list.color_class }}">
-					<div class="shape">
-						<div class="shape-text">
-							top
+				<div class="" ng-click="viewList(list._id)">
+					<div class="{{ list.color_class }}">
+						<div class="shape">
+							<div class="shape-text">
+								top
+							</div>
+						</div>
+						<div class="offer-content">
+							<h3 class="lead">
+								{{ list.list_name }}
+							</h3>
+							<p>
+								{{ list.description }}
+							</p>
+						</div>
+						<div class="pull-right col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<i class="fa fa-trash" aria-hidden="true" ng-click="destroy(list._id)"></i>
 						</div>
 					</div>
-					<div class="offer-content">
-						<h3 class="lead">
-							{{ list.list_name }}
-						</h3>
-						<p>
-							{{ list.description }}
-						</p>
-					</div>
 				</div>
+
+
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" data-toggle="modal" data-target="#modalCart">
 				<div class="offer offer-radius offer-danger">
@@ -100,6 +107,29 @@
 	        </div>
 	    </div>
 	</div>
+	<!-- delete the list  destroy_modal-->
+	<!-- Modal -->
+	<div id="destroy_modal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Delete List</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Are you sure ? </p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="destroyConfirm()">Yes</button>
+	        <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+	<!-- delete the list  end -->
 	<!-- Modal: modalCart -->
 	<!--  adding list model end -->
 </div>

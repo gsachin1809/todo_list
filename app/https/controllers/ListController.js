@@ -47,6 +47,7 @@ module.exports = {
   'destroy' : function(req, res){
     var data = req.params;
     console.log(data);
+    console.log("delete funciton");
     ListModule.destroy(data).then(function(result) {
       res.send(result);
     },function errorHandler(err){
