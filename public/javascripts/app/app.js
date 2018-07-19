@@ -1,7 +1,8 @@
-var app = angular.module('ToDoList', ['ngRoute','ngResource','toastr']);
+var app = angular.module('ToDoList', ['ngRoute','ngResource','ui.router','toastr']);
 
 app.controller('RootController', function($scope) {
   $scope.message = 'Hello from HomeController';
+  console.log("root controller");
 });
 
 app.controller('HomeController', function($scope) {
@@ -11,7 +12,7 @@ app.controller('HomeController', function($scope) {
 
 
 app.controller('ListHomeController',function($scope,List,toastr) {
-  console.log("hello");
+  console.log("ListHomeController");
   $scope.message = 'Hello from HomeController';
   $scope.list_name = '';
   $scope.description = '';

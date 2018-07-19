@@ -1,11 +1,19 @@
-app.config(function($routeProvider) {
-  $routeProvider
+app.config(function($stateProvider,  $urlRouterProvider) {
 
-  .when('/', {
+  $stateProvider.state('root', {
+    url : '/',
     templateUrl : '/javascripts/app/templates/home.html',
     controller  : 'ListHomeController'
-  })
-
-
-  .otherwise({redirectTo: '/'});
+  });
+  // $stateProvider.state('root', {
+  //   url : '/',
+  //   'views':{
+  //     'root_view':{
+  //       templateUrl : '/javascripts/app/templates/home.html',
+  //       controller  : 'ListHomeController'
+  //     }
+  //   }
+  // });
+  //
+  // $urlRouterProvider.otherwise('/');
 });
